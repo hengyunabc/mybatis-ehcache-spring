@@ -19,9 +19,15 @@ public class FacadeCache implements Cache {
             : SharedSpringContext.DEFAULT_SPRINGCONTEXT_NAME;
 
     ApplicationContext applicationContext = SharedSpringContext.get(contextName);
+    if(applicationContext == null){
+      throw new RuntimeException("can not found spring applicationContext, need a SharedSpringContextSetter!!");
+    }
     String beanName =
         cacheFactoryBeanName != null ? cacheFactoryBeanName : DEFAULT_CACHE_FACTORY_BEAN_NAME;
     CacheFactory cacheFactory = applicationContext.getBean(beanName, CacheFactory.class);
+    if(cacheFactory == null){
+      throw new RuntimeException("can not found CacheFactory, need a bean name is:" + beanName);
+    }
     this.cache = cacheFactory.getCache(id);
   }
 
