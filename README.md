@@ -1,16 +1,16 @@
-﻿# mybatis
+﻿# mybatis-ehcache-spring
 
 ## Why we need this project
 The official mybatis-ehcache is very simple. It create ehcache like follow:
 ```java
 protected static CacheManager CACHE_MANAGER = CacheManager.create();
 ```
-User can not set custom ehcache.xml, can not set custom CacheManager,
+User can not set custom ehcache.xml, can not set custom CacheManager.
 https://github.com/mybatis/ehcache-cache
 
 This project provide these feature:
-* Load Ehcache config from custom file or from a existed ehcache manager.
-* Mybatis cache metrics.
+* Load Ehcache config from custom ehcache.xml file or use a existed ehcache manager.
+* Mybatis cache **metrics**.
 * Spring integration.
 
 ##Example
@@ -83,6 +83,7 @@ User can provide custom ehcache `CacheManager` and `CacheConfiguration`.
 *  Config your metricRegistry.
 
 https://github.com/ryantenney/metrics-spring
+
 ```xml
 <metrics:metric-registry id="metricRegistry" />
 ```
