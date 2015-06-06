@@ -76,7 +76,7 @@ public class MybatisEhcacheFactory implements CacheFactory {
       cacheManager.addCache(cache);
     }
     return new EhcacheCache(id, cacheManager.getEhcache(id));
-    ```
+```
 User can provide custom ehcache `CacheManager` and `CacheConfiguration`.
 
 ## Mybatis Cache Metrics
