@@ -130,6 +130,16 @@ net.sf.ehcache.Cache.io.github.xdiamond.persistence.UserMapper.puts
     15-minute rate = 0.00 calls/second
 ```
 
+## maven repository
+```xml
+	<repositories>
+		<repository>
+			<id>hengyunabc-maven-repo</id>
+			<url>https://raw.githubusercontent.com/hengyunabc/maven-repo/master/repository</url>
+		</repository>
+	</repositories>
+```
+
 ## More
 Mybatis use mapper namespace for cache id, so you can config different cache for different table in your ehcache.xml
 
