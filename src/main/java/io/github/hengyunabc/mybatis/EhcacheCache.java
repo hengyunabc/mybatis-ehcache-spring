@@ -160,7 +160,7 @@ public class EhcacheCache implements Cache {
   /**
    * Sets the maximum objects to be held in memory (0 = no limit).
    *
-   * @param maxElementsInMemory The maximum number of elements in memory, before they are evicted (0
+   * @param maxEntriesLocalHeap The maximum number of elements in memory, before they are evicted (0
    *        == no limit)
    */
   public void setMaxEntriesLocalHeap(long maxEntriesLocalHeap) {
@@ -170,7 +170,7 @@ public class EhcacheCache implements Cache {
   /**
    * Sets the maximum number elements on Disk. 0 means unlimited.
    *
-   * @param maxElementsOnDisk the maximum number of Elements to allow on the disk. 0 means
+   * @param maxEntriesLocalDisk the maximum number of Elements to allow on the disk. 0 means
    *        unlimited.
    */
   public void setMaxEntriesLocalDisk(long maxEntriesLocalDisk) {

@@ -1,9 +1,45 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>9</version>
+	</parent>
+
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.github.hengyunabc</groupId>
 	<artifactId>mybatis-ehcache-spring</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>mybatis-ehcache-spring</name>
+	<description>Mybatis ehcache with spring. Mybatis cache metrics.</description>
+	<url>https://github.com/hengyunabc/mybatis-ehcache-spring</url>
+	<inceptionYear>2015</inceptionYear>
+
+	<licenses>
+		<license>
+			<name>Apache 2</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+			<comments>A business-friendly OSS license</comments>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<id>hengyunabc</id>
+			<name>hengyunabc</name>
+			<email>hengyunabc@gmail.com</email>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:git://github.com/hengyunabc/mybatis-ehcache-spring.git</connection>
+		<developerConnection>scm:git:git@github.com:mybatis-ehcache-spring.git</developerConnection>
+		<url>https://github.com/hengyunabc/mybatis-ehcache-spring</url>
+	</scm>
+
 
 	<properties>
 		<maven.compiler.target>1.7</maven.compiler.target>
@@ -14,6 +50,36 @@
 		<spring.version>4.1.6.RELEASE</spring.version>
 		<dropwizard-metrics.version>3.1.1</dropwizard-metrics.version>
 	</properties>
+
+	<profiles>
+		<profile>
+			<id>release-sign-artifacts</id>
+			<activation>
+				<property>
+					<name>performRelease</name>
+					<value>true</value>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
 
 	<dependencies>
 		<dependency>
@@ -79,21 +145,34 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	
-      <build>
+
+	<build>
 		<plugins>
-		  <plugin>
-		      <groupId>org.apache.maven.plugins</groupId>
-		      <artifactId>maven-source-plugin</artifactId>
-		      <executions>
-			      <execution>
-				      <id>attach-sources</id>
-				      <goals>
-					      <goal>jar</goal>
-				      </goals>
-			      </execution>
-		      </executions>
-		</plugin>
-	      </plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
 	</build>
 </project>
