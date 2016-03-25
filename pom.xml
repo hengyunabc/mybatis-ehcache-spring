@@ -35,8 +35,8 @@
 	</developers>
 
 	<scm>
-		<connection>scm:git:git://github.com/hengyunabc/mybatis-ehcache-spring.git</connection>
-		<developerConnection>scm:git:git@github.com:mybatis-ehcache-spring.git</developerConnection>
+		<connection>scm:git:git@github.com:hengyunabc/mybatis-ehcache-spring.git</connection>
+		<developerConnection>scm:git:git@github.com:hengyunabc/mybatis-ehcache-spring.git</developerConnection>
 		<url>https://github.com/hengyunabc/mybatis-ehcache-spring</url>
 	</scm>
 
